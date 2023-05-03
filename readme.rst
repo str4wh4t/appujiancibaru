@@ -3,7 +3,8 @@ Ujian Pemrograman Web
 ###################
 
 -   Clone repositori
--   Jangan lupa untuk menjalankan perintah : composer install
+-   Hapus folder .git
 -   Kemudian buat repo sendiri di github dari hasil clone repositori
+-   Publish repo ke github
 -   Nanti ketika ujian silahkan tinggal push 
 -   Selamat ujian
