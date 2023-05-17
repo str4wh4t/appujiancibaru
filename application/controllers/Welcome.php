@@ -29,8 +29,32 @@ class Welcome extends CI_Controller
 
     public function tampil()
     {
-        $nama = 'tata';
+        // ambil variable post nama, nim dan umur
+
+        $nama = $this->input->post('namaku');
+        $nim = $this->input->post('nim');
+        $umur = $this->input->post('umur');
+
+        $status = '';
+
+        if ($umur < 10) {
+            $status = 'Anak';
+        } elseif ($umur < 20) {
+            $status = 'Remaja';
+        } elseif ($umur < 30) {
+            $status = 'Dewasa';
+        } else {
+            $status = 'Tua';
+        }
+
         $blade = new Blade(VIEWPATH, APPPATH . 'cache');
-        echo $blade->make('tampil', ['nama' => $nama])->render();
+        $array_data = [
+            'nama' => $nama,
+            'nim' => $nim,
+            'umur' => $umur,
+            'status' => $status,
+        ];
+
+        echo $blade->make('tampil', $array_data)->render();
     }
 }
